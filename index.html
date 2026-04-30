@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>LAST POST — Enquête</title>
+  <link rel="stylesheet" href="css/main.css" />
+  <link rel="stylesheet" href="css/apps.css" />
+</head>
+<body>
+
+  <!-- Écran d'intro avant le "téléphone" -->
+  <div id="intro-screen">
+    <div class="intro-content">
+      <p class="intro-label">Dossier n°7 — Objet à conviction</p>
+      <h1>LAST POST</h1>
+      <div class="intro-divider"></div>
+      <p class="intro-sub">
+        Le téléphone de <strong>Nolan Bourrel</strong> a été retrouvé dans sa chambre d'hôtel.<br>
+        Il est verrouillé. Peut-être qu'il contient des réponses.
+      </p>
+      <button id="start-btn">Allumer le téléphone</button>
+    </div>
+  </div>
+
+  <!-- Wrapper principal -->
+  <div id="game-wrapper" hidden>
+
+    <!-- Cadre du téléphone -->
+    <div id="phone">
+      <div id="phone-inner">
+
+        <!-- Barre de statut -->
+        <div id="status-bar">
+          <span id="status-time">09:41</span>
+          <div id="status-icons">
+            <svg width="16" height="12" viewBox="0 0 16 12" fill="currentColor">
+              <rect x="0" y="4" width="3" height="8" rx="1"/>
+              <rect x="4" y="2" width="3" height="10" rx="1"/>
+              <rect x="8" y="0" width="3" height="12" rx="1"/>
+            </svg>
+            <svg width="16" height="12" viewBox="0 0 16 12" fill="currentColor">
+              <path d="M8 2.4C10.7 2.4 13.1 3.5 14.8 5.3L16 4C14 1.9 11.1.6 8 .6S2 1.9 0 4l1.2 1.3C2.9 3.5 5.3 2.4 8 2.4z"/>
+              <path d="M8 5.4c1.8 0 3.4.8 4.6 2L14 6C12.4 4.2 10.3 3 8 3S3.6 4.2 2 6l1.4 1.4C4.6 6.2 6.2 5.4 8 5.4z"/>
+              <circle cx="8" cy="10" r="1.5"/>
+            </svg>
+            <svg width="25" height="12" viewBox="0 0 25 12" fill="currentColor">
+              <rect x="0" y="1" width="21" height="10" rx="2" stroke="currentColor" stroke-width="1.5" fill="none"/>
+              <rect x="1.5" y="2.5" width="16" height="7" rx="1" fill="currentColor"/>
+              <path d="M22 4v4a2 2 0 000-4z"/>
+            </svg>
+          </div>
+        </div>
+
+        <!-- Zone d'écran (contenu dynamique) -->
+        <div id="screen"></div>
+
+        <!-- Barre de navigation bas -->
+        <div id="nav-bar" hidden>
+          <button id="nav-back" title="Retour">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="15 18 9 12 15 6"/>
+            </svg>
+          </button>
+          <button id="nav-home" title="Accueil">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/>
+              <polyline points="9 22 9 12 15 12 15 22"/>
+            </svg>
+          </button>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Enigmo — assistant de l'enquête -->
+    <div id="enigmo-panel">
+      <div id="enigmo-header">
+        <div id="enigmo-avatar"><img src="assets/icons/icone Enigmo.png" alt="Enigmo"></div>
+        <div id="enigmo-identity">
+          <div id="enigmo-name">Enigmo</div>
+          <div id="enigmo-status">Guide de l'enquête</div>
+        </div>
+      </div>
+      <div id="enigmo-chat"></div>
+      <div id="enigmo-input-zone">
+        <input type="text" id="enigmo-input" placeholder="Votre réponse…" autocomplete="off" />
+        <button id="enigmo-send">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/>
+          </svg>
+        </button>
+      </div>
+    </div>
+
+    <!-- Toast notifications -->
+    <div id="toast-container"></div>
+
+    <!-- Debug panel (désactiver en prod) -->
+    <div id="debug-panel">
+      <button id="debug-toggle">⚙ Debug</button>
+      <div id="debug-content" hidden>
+        <strong>Game State</strong>
+        <pre id="debug-state"></pre>
+        <button id="debug-reset">Reset partie</button>
+        <button id="debug-unlock-all">Tout déverrouiller</button>
+      </div>
+    </div>
+
+  </div>
+
+  <script type="module" src="js/main.js"></script>
+</body>
+</html>
