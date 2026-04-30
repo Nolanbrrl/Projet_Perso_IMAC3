@@ -28,7 +28,7 @@ const NOLAN_PHOTOS = [
 const NOLAN_VIDEOS = [
   {
     id: 'v-recettes',
-    src: 'assets/videos/Post vidéo insta Nolan.MOV',
+    src: 'assets/videos/Post vidéo insta Nolan.mov',
     likes: '7 312',
     caption: 'nouvelle vidéo en ligne Les recettes de NO\' épisode 1 : Le gâteau à plusieurs étages',
     description: 'Les recettes de NO\' — Épisode 1 : Le gâteau à plusieurs étages 🎂\n\nParce que cuisiner ça fait du bien 🙂\n\nRecette complète en commentaire 👇',
